@@ -82,7 +82,7 @@ def logout():
 		session.pop('username', None)
 	print(session)
 	return redirect(url_for('index'))
-
+# git status hello world
 
 # @app.route('/profile/<int:user_id>/password', methods=['POST'])
 # def password_update(user_id):
