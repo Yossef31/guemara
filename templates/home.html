@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>liste des discussion</title>
+</head>
+<body>
+  <nav class="navbar navbar-primary bg-light">
+    <a class="navbar-brand" href="/">FORUM GUEMARA - MESSAGES</a>
+  </nav>
+  <!-- {% if 'username' in session %}
+    <a href="/logout">logout</a>
+  {% else %}
+    <a href="/login">login</a>
+  {% endif %} -->
+
+  <form method="POST" action="/home/{{discussion.id}}" class="lg-4">
+    <textarea name="text"></textarea><br>
+    <button type="submit" class="btn btn-primary">creer message</button>    
+  </form>
+
+	
+	<ul>
+    {% for message in messages %}
+    <br>User {{message.user_id}} a ecrit le {{message.date}}
+        <li>
+            {{discussion.titre}}
+    	   <div class="card">{{message.text}}</div>
+           <a class="btn btn-primary" href="/profil/{{message.user_id}}">profil</a>
+        </li>
+    {%endfor%}
+    </ul>
+
+
+</body>
+</html>

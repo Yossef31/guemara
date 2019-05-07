@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>discussion</title>
+</head>
+<body>
+	{% if 'username' in session %}
+		<a href="/logout">logout</a>
+	{% else %}
+		<a href="/login">login</a>
+	{% endif %}
+
+
+
+	<h4>messages</h4>
+	<ul>
+		{% for message in messages%}
+		<li>{{  }}
+			
+		</li>
+		}
+		}
+	</ul>
+
+
+
+
+</body>
+</html>
